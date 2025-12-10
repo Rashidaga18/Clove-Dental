@@ -202,46 +202,133 @@ body {
 /* ==========================
    TREATMENT CARDS
 ========================= */
-.treatment-section { width: 100%; padding: 60px 0; background: #fff; text-align: center; }
-.section-title { font-size: 26px; font-weight: bold; margin-bottom: 10px; }
-.section-sub { font-size: 15px; color: #555; margin-bottom: 40px; }
+.treatment-section {
+  width: 100%;
+  padding: 60px 5%;
+  background: #fff;
+  text-align: center;
+}
 
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 40px;
+}
 .treatment-cards {
   width: 100%;
   max-width: 1440px;
   margin: auto;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 30px ;/* reduced from 30px to 15px */
   flex-wrap: wrap;
 }
 
 .treat-card {
-  width: 460px;
+  width: 100%;
+  max-width: 520px;
   background: #F8F3EF;
   border-radius: 20px;
-  padding: 28px;
   display: flex;
-  gap: 25px;
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 0; /* remove gap to make image flush with text */
+  align-items: stretch;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
+  
 }
+
+/* Hover effect */
 .treat-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-.treat-img { width: 130px; }
-.treat-content h3 { margin: 0; font-size: 20px; font-weight: bold; }
-.sub { font-size: 14px; margin-top: 5px; color: #555; }
-.types-title { margin-top: 12px; font-weight: bold; }
-.types { margin: 8px 0 15px; padding-left: 18px; line-height: 1.5; font-size: 14px; }
-.price-title { font-size: 13px; margin-top: 5px; color: #555; }
-.price { font-size: 18px; font-weight: bold; margin: 5px 0 12px; }
-.treat-btn { padding: 10px 20px; background: #FF8200; border: none; color: #fff; border-radius: 25px; cursor: pointer; }
+/* Image */
+.treat-img {
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+  flex-shrink: 0;
+}
 
+/* Text content */
+.treat-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  background: #fff; /* added background */
+  border-radius: 0 20px 20px 0; /* match the card’s right corners */
+}
+.treat-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.sub {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  color: #555;
+}
+
+/* Bullet list for types */
+.types-title {
+  margin: 6px 0 4px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.types {
+  margin: 0 0 10px 15px; /* compact spacing */
+  padding-left: 0;
+  line-height: 1.4;
+  font-size: 14px;
+  list-style-type: disc;
+}
+
+/* Price section */
+.price-title {
+  font-size: 13px;
+  margin: 5px 0 0 0;
+  color: #555;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2px 0 12px 0;
+}
+
+/* Button */
+.treat-btn {
+  padding: 10px 20px;
+  background: #FF8200;
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.treat-btn:hover {
+  opacity: 0.9;
+}
 /* ==========================
    REAL SMILES
 ========================= */
@@ -255,7 +342,7 @@ body {
   margin: 35px auto 0;
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
@@ -278,36 +365,117 @@ body {
 
 /* ==========================
    WHY CHOOSE
-========================= */
+========================== */
+
+/* ==========================
+   WHY CHOOSE
+========================== */
+
 .why-choose {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 5%;
-  gap: 30px;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
   background: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.why-left { flex: 1 1 400px; }
-.why-left h2 { font-size: 28px; font-weight: bold; margin-bottom: 15px; }
-.why-left p { color: #555; margin-bottom: 20px; }
+/* Center heading and paragraph */
+.why-choose h2 {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #000;
+}
 
-.why-list { list-style: none; padding: 0; }
-.why-list li { margin-bottom: 12px; position: relative; padding-left: 25px; font-weight: 500; }
-.why-list li::before { content: "+"; position: absolute; left: 0; color: #FF8200; font-weight: bold; }
+.why-choose p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Flex container for questions, plus signs, and image */
+.why-content {
+  display: flex;
+  justify-content: space-between; /* Push text left and image fully right */
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap; /* Prevent wrapping for strict left-right layout */
+}
+
+/* Questions list on the left */
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;        /* vertical spacing between questions */
+  width: 100%;      /* take full width of parent container */
+  max-width: none;  /* remove fixed 350px width */
+}
+
+.why-list li {
+  display: flex;                
+  justify-content: space-between; /* question left, plus right */
+  align-items: center;   
+  width: 100%;                    /* make li full width */
+}
+
+.why-list li .question-text {
+  font-weight: 600;              
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.why-list li .plus {
+  color: #FF8200;
+  font-weight: bold;
+  font-size: 30px;
+  flex-shrink: 0;               
+  margin-left: 0;                /* stick exactly at the far right */
+}
+
+
+
+/* Plus signs vertical column */
+.why-plus {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #FF8200;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 26px; /* vertical spacing, adjust to align perfectly */
+  user-select: none;
+  width: 20px;
+  margin-top: 6px; /* vertical offset to align plus signs better */
+}
+
+/* Right side image container */
+.why-right {
+  flex-shrink: 0;
+  width: 320px; /* fixed width matching image */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
 .why-right img {
+  display: block;
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
   transition: all 0.35s ease;
   cursor: pointer;
 }
-.why-right img:hover {
-  transform: translateY(-12px);
-  background: rgba(255,130,0,0.08);
-  border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-  padding: 8px;
-}
+
+
+
 
 /* ==========================
    PATIENTS SAY
@@ -317,22 +485,36 @@ body {
   text-align: center;
   background: #fff;
 }
-.patients-say h2 { font-size: 28px; font-weight: bold; margin-bottom: 10px; }
-.patients-say p { color: #555; margin-bottom: 40px; }
 
+.patients-say h2 { 
+  font-size: 28px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+
+.patients-say p { 
+  color: #555; 
+  margin-bottom: 40px; 
+}
+
+/* row of patient cards */
 .patients-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 15px; /* slightly more spacing between cards */
 }
 
+/* individual patient card */
 .patient-box {
   padding: 15px;
   border-radius: 12px;
   transition: all 0.35s ease;
   cursor: pointer;
+  width: 220px; /* fixed width for consistency */
+  box-sizing: border-box;
 }
+
 .patient-box:hover {
   transform: translateY(-12px);
   background: rgba(255,130,0,0.08);
@@ -340,58 +522,172 @@ body {
   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-.patient-box img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
-.patient-name { font-weight: bold; margin-top: 10px; }
-.patient-service { color: #FF8200; font-size: 14px; margin: 3px 0; }
-.patient-city { font-size: 13px; color: #555; }
+.patient-box img { 
+  width: 100%; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+  margin-bottom: 10px;
+}
 
-/* ==========================
-   BIG APPOINTMENT FORM
-========================= */
-.big-appointment { text-align: center; padding: 50px 5%; background: #fff; }
-.big-appointment h2 { font-size: 26px; font-weight: bold; }
-
-.big-form {
-  margin-top: 25px;
+/* name and service on same line */
+.patient-info {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.big-form input {
-  padding: 12px;
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  position: relative;
+  justify-content: space-between; /* name left, service right */
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  padding-bottom: 20px;
 }
 
-.big-btn {
-  padding: 12px 20px;
-  background: #5C2E1D;
-  color: white;
-  border: none;
-  border-radius: 10px;
+.patient-name { 
   font-weight: bold;
 }
 
-.agree-line {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  font-size: 14px;
+.patient-service { 
+  color: #FF8200; 
+  font-weight: 500;
 }
 
-.orange-big-btn {
-  margin-top: 20px;
-  background: #FF8200;
+.patient-city { 
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font-size: 13px; 
+  color: #555; 
+}
+
+/* ==========================
+   BIG APPOINTMENT FORM
+========================== */
+/* ==========================
+   BIG APPOINTMENT FORM
+========================== */
+
+.big-appointment {
+  text-align: center;
+  padding: 40px 5%;
+  background: #fef4eb;
+}
+
+.big-appointment h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Form container */
+.big-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Normal input styling */
+.big-form input {
+  padding: 12px 15px;
+  width: 260px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 14px;
+  background: #fff;
+}
+
+/* Captcha Box */
+.captcha-container {
+  position: relative;
+  width: 260px;
+}
+
+.captcha-container input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 14px;
+  padding: 12px 120px 12px 15px;   /* Enough space on the RIGHT */
+  background: #fff;
+}
+
+/* Captcha number box */
+.captcha-code {
+  position: absolute;
+  top: 50%;
+  right: 0px;                      /* EXACT RIGHT END */
+  transform: translateY(-50%);
+  background: #5C2E1D;
   color: #fff;
-  padding: 12px 25px;
+  padding: 6px 16px;               /* Button-like */
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* ================================
+   AGREE + BUTTON IN SAME LINE
+================================ */
+
+.agree-button-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;   /* increased width */
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+}
+
+
+/* Agree text block */
+.agree-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  white-space: nowrap;      /* 🟢 TEXT WILL NOT BREAK */
+  overflow: hidden; 
+  font-size: 14px;
+  color: #444;
+}
+
+
+.agree-line input {
+  width: 18px;
+  height: 18px;
+}
+
+
+.agree-line a {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Orange Button */
+.orange-big-btn {
+  background: #FF8A00;
+  color: #fff;
+  padding: 12px 28px;
   border: none;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
+
 
 /* ==========================
    SAFETY CARDS
